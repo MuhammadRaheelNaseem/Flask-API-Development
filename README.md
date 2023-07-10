@@ -1,6 +1,7 @@
 # What is Flask
 
-![image.png](attachment:image.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/300830d4-f187-44f0-ba7d-41418bcdfcce)
+
 
 # `Introduction to Postman for API Development`
 
@@ -11,30 +12,35 @@
 ## `Installing Postman on Windows`
 ## `Step 1: Visit the https://www.postman.com/ website using any web browser. `
 
-![image.png](attachment:image.png)
-![image-2.png](attachment:image-2.png)
-![image-3.png](attachment:image-3.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/c9eaf3a0-f329-4ef9-8e8f-7077cd555f37)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/bd6bbee0-38cb-4dee-9fde-1eab6aa4ae69)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/13b7661a-d6d9-4173-84e1-084ed12457b7)
+
 
 ## `Step 4: Now check for the executable file in downloads in your system and run it.`
 
-![image-4.png](attachment:image-4.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/977b11d6-3dcd-4f55-a4b2-59c84e392a02)
+
 
 ## `Step 5: Create or sign in account`
 
-![image-5.png](attachment:image-5.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/a38028ee-e56c-4f29-944b-2be1dcb46509)
+
 
 ## `Step 6: When you click on sign in option you will redirect on google verification link: just click`
 
-![image-6.png](attachment:image-6.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/1250f3d9-75ec-478f-9500-870a6cfb4b3b)
+
 
 ## `Automatically log in application:`
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/64d175d1-97ce-4dbb-a73d-9ca3735205de)
 
-![image-7.png](attachment:image-7.png)
 
 ## `How to use Postman to execute APIs`
 `Below is the Postman Workspace. Let’s explore the step by step process on How to use Postman and different features of the Postman tool!`
 
-![image-8.png](attachment:image-8.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/15f40e75-848f-491d-b8c4-e7e9ac8e5c19)
+
 
 `<ol>
 <li> <b>New</b> – This is where you will create a new request, collection or environment.</li>
@@ -93,32 +99,36 @@ HTTP defines these standard status codes that can be used to convey the results 
 # API Testing with Postman
 
 # 1.) `GET` Method:
-![image.png](attachment:image.png)
-![image-2.png](attachment:image-2.png)
-![image-3.png](attachment:image-3.png)
-![image-4.png](attachment:image-4.png)
-![image-5.png](attachment:image-5.png)
-![image-6.png](attachment:image-6.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/7f4fd1b3-3d5f-4844-97d4-61ae6b443a42)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/06b4dde1-a278-4fba-98b3-f4e78ad03b82)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/7d6e2e83-60d9-4e7c-a3db-edfdffa5c87b)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/551df4ff-1aa9-4e93-aba9-4a4db99be45d)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/d00d4881-6a43-4765-9df5-cad3c63f5956)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/cbabcc4b-2f48-4fca-b7ad-24af6b013c5b)
+
 
 # 2.) `POST` Method:
-![image-7.png](attachment:image-7.png)
-![image-8.png](attachment:image-8.png)
-![image-10.png](attachment:image-10.png)
-![image-9.png](attachment:image-9.png)
-![image-11.png](attachment:image-11.png)
-![image-12.png](attachment:image-12.png)
-![image-13.png](attachment:image-13.png)
-![image-14.png](attachment:image-14.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/219ff046-5057-4411-984d-32657a1bba77)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/13ae9d75-7531-4cea-8715-a366291574f8)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/51caeb7d-30dc-4d90-9e55-283087b422d8)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/4f728332-335f-4663-b36d-d2826811a16c)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/7e6687b1-80e1-4121-adfe-d219d857a7fe)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/39e3626f-0977-4b45-9531-ac2d469a7ded)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/183d9895-29dc-48ea-a6fd-54702c8514dd)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/1f05bf09-ba21-42c0-a745-dde253a2751a)
+
 
 # 3.) `PATCH` Method:
-![image-15.png](attachment:image-15.png)
-![image-16.png](attachment:image-16.png)
-![image-17.png](attachment:image-17.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/27736754-c22b-49d4-ab96-6c2caeb0879a)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/a550cb6f-180e-443b-aae1-f85986f39a68)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/63441551-612f-402f-8f3e-ddd94dc8523a)
+
 
 # 4.) `DELETE` Method:
-![image-18.png](attachment:image-18.png)
-![image-19.png](attachment:image-19.png)
-![image-20.png](attachment:image-20.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/58872a6d-a2d4-4d65-8fba-fa0287598fb2)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/369ed739-56b3-438d-a44f-f9069dade1ce)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/1aa769fa-7ae9-4e14-97c9-2100aea9901b)
+
 
 # API Development with Flask App
 ---
@@ -143,33 +153,18 @@ HTTP defines these standard status codes that can be used to convey the results 
     pip install flask-sqlalchemy
     ```
 
-
-
-```python
-
-```
-
-
-```python
-
-```
-
-
-```python
-
-```
-
 # What is Protocol
 
 ## Is this protocol
-![image.png](attachment:image.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/a78ed314-6cc8-4217-bb37-350df19ab664)
 
 ## Protocol: 
 
 A protocol is a set of rules and guidelines for communicating data. Rules are defined for each step in the process during communication between two or more computers. Networks have to follow these rules to successfully transmit data.
 
-![image.png](attachment:image.png)
-![image-3.png](attachment:image-3.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/d77cc2b9-ac80-46c4-93f2-2807473fac0f)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/1065dd88-7ad4-4508-aa71-24ceff46debc)
+
 
 
 ```python
@@ -197,12 +192,12 @@ if __name__ == '__main__':
 
 
 ```
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/efb91a2c-4b11-4ce1-aca5-ef16fc34b2dd)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/a213322b-f511-4528-9419-84d7c594a560)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/6276a77b-cfa9-4380-9fa9-0203da893b0e)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/df36601b-f30c-4ee9-bb4a-d55b79c3deee)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/9bf83c5d-d94b-4c9f-a189-312f82062aa2)
 
-![image.png](attachment:image.png)
-![image-2.png](attachment:image-2.png)
-![image-3.png](attachment:image-3.png)
-![image-4.png](attachment:image-4.png)
-![image-5.png](attachment:image-5.png)
 
 
 ```python
@@ -224,10 +219,11 @@ def index():
 app.run()
 ```
 
-![image-2.png](attachment:image-2.png)
-![image-3.png](attachment:image-3.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/4d9cefb1-f4fe-48e6-b230-d70d55424ba6)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/504ab103-bcd5-456c-a058-bb93f0a9760a)
 
-## what is jsonify
+
+## What is jsonify
 jsonify is a function provided by Flask, a popular web framework for Python. It is used to convert Python objects into JSON (JavaScript Object Notation) format, which is a lightweight data interchange format commonly used in web APIs.
 
 
@@ -286,8 +282,9 @@ if __name__ == '__main__':
 
 ```
 
-![image-2.png](attachment:image-2.png)
-![image.png](attachment:image.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/18e138bc-f5e3-4649-8135-270263fb2e15)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/a516849f-f3ee-479b-83c0-58c425333fb5)
+
 
 # Request method
 <hr>
@@ -331,7 +328,8 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/8bb1c764-2f72-4599-b8a2-f1b0518b3342)
+
 
 
 ```python
@@ -351,7 +349,8 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/89ad5d12-8230-4dc5-95f6-44cbaf044f31)
+
 
 
 ```python
@@ -371,7 +370,8 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/4291dc52-365a-45a2-98f9-83f334e59a6e)
+
 
 
 ```python
@@ -392,7 +392,8 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png) 
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/8941f4a9-6efa-4de4-ab27-812307684f28)
+
 
 # POST Method
 
@@ -411,7 +412,8 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png) 
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/2eed3210-f225-48f7-ab55-6ca4a39d2a89)
+
 
 
 ```python
@@ -428,7 +430,8 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png) 
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/1470f1c1-ca77-4059-8af4-0d271f08a6dd)
+
 
 
 ```python
@@ -447,7 +450,8 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png) 
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/5c180e44-2429-409d-9454-f2b4b6e2f908)
+
 
 
 ```python
@@ -472,7 +476,8 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png) 
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/360fb399-df81-4009-afa0-e49c6629aabe)
+
 
 
 ```python
@@ -494,7 +499,8 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png) 
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/f7f85432-5c96-4a04-b81c-5bdb92dd7e97)
+
 
 
 ```python
@@ -519,10 +525,12 @@ if __name__ == '__main__':
 
 ```
 
-`POST`
-![image-2.png](attachment:image-2.png)
-`GET`
-![image.png](attachment:image.png) 
+# `POST`
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/47ffa337-0ddd-41e9-977e-2da75f677f71)
+
+# `GET`
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/65acf006-bd7a-44d1-bdba-b160c5220238)
+
 
 
 ```python
@@ -547,9 +555,10 @@ if __name__ == '__main__':
 
 ```
 
-![image-3.png](attachment:image-3.png)
-![image.png](attachment:image.png)
-![image-2.png](attachment:image-2.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/524585fb-28d7-41d0-837f-bc4270535081)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/435db0ac-e799-412a-95e7-0dbd5de98b7f)
+![imag![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/641d760a-4e8d-4911-a38b-080bae4ce306)
+
 
 
 ```python
@@ -574,8 +583,9 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png)
-![image-2.png](attachment:image-2.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/5ae2240a-f0fa-47af-b462-17641dfc0788)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/5f583477-0e44-42a4-b3d4-0460bfeae71f)
+
 
 # PUT Method
 
@@ -593,8 +603,8 @@ if __name__ == '__main__':
     app.run()
 
 ```
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/6fd298f3-93b8-4a84-996b-265766412e2e)
 
-![image.png](attachment:image.png)
 
 
 ```python
@@ -626,8 +636,9 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png)
-![image-2.png](attachment:image-2.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/92a5a94b-a24f-40f7-9ee1-a2695b1afaec)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/573ea83d-9e15-4aa2-9896-04b70393247a)
+
 
 
 ```python
@@ -654,7 +665,8 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png) 
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/ea399433-e5cf-4003-9f15-9380d41a9f6c)
+
 
 
 ```python
@@ -685,6 +697,8 @@ if __name__ == '__main__':
 
 ```
 
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/f87960a1-c78e-47c6-b218-3b898c7a93c1)
+
 
 ```python
 from flask import Flask, request, jsonify
@@ -702,18 +716,12 @@ def update_user(id):
 if __name__ == '__main__':
     app.run()
 ```
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/d9756835-22b1-47ad-b697-a161eb246c5d)
 
-
-```python
-
-```
 
 # DELETE Method
 
 
-```python
-
-```
 
 
 ```python
@@ -730,7 +738,8 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/944c1971-9937-433f-9276-721ae23f114c)
+
 
 
 ```python
@@ -762,22 +771,9 @@ if __name__ == '__main__':
 
 ```
 
-![image.png](attachment:image.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/e0818526-9c1e-4b6b-815e-c28a38feb2e1)
 
-
-```python
-# from flask import Flask, request, jsonify
-import mysql.connector
-from pprint import pprint
-
-db = mysql.connector.connect(
-    host="mraheel.mysql.pythonanywhere-services.com",
-    user="mraheel",
-    password="Raheel42101@",
-    port=3306
-)
-```
-
+# Now Making Script That Can Used All Methods
 
 ```python
 from flask import Flask, request, jsonify
@@ -861,71 +857,52 @@ if __name__ == '__main__':
 ```
 
 # OUPUT `GET` Method:
-![image.png](attachment:image.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/ace218b0-285e-40b2-a095-a77f9ea22821)
+
 # OUPUT `POST` Method:
-![image-2.png](attachment:image-2.png)
-![image-4.png](attachment:image-4.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/642ee444-3e0d-42ba-bce0-75e5f5a07580)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/cf55462f-a5fa-4ca6-9b7c-2c3cb386ca1c)
+
 # OUTPUT `PUT` Method:
-![image-5.png](attachment:image-5.png)
-![image-6.png](attachment:image-6.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/bbd064ff-354b-484f-9560-a5e47ec18d13)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/4e11cd76-d8fc-46de-b8e6-e3f84cd0e58c)
+
 # OUTPUT `DELETE` Method:
-![image-7.png](attachment:image-7.png)
-![image-8.png](attachment:image-8.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/e60d83cb-d789-4115-bec1-474bbe38c33a)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/1565b48d-4494-48eb-b8cd-0fc497973f83)
+
 
 # Now Deploying API script into `pythonanywhere.com`
-![image.png](attachment:image.png)
-![image-2.png](attachment:image-2.png)
-![image-3.png](attachment:image-3.png)
 
-![image.png](attachment:image.png)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/d715dde0-f7ff-4c11-b1da-ee3a2cd493b0)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/9457bf21-3f4a-4cd0-87a8-9bdbb1db7d3b)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/f2ba9132-0115-4c83-93dc-4c1c66c1f746)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/0bce4e90-7964-4d42-a728-8647a8a792d0)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/a59cd8cc-d878-421f-b292-ee6b337485f8)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/c14ea896-60d2-43ca-83e7-3dcc758985c7)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/2fe17db1-6121-42d1-aa0e-deef63c608e9)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/f5c852e3-217c-4c3b-85f3-8df7773c2a56)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/5e37db1f-5857-4229-8167-62e068e3b592)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/e8328405-c938-4359-80fe-6e8ecac214d2)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/7b0bd521-3b74-4c2c-bea2-2860a2d964c4)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/2fe85e28-b094-47bd-9b6e-2ef9a8aa5959)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/3dc50fb3-36cb-4755-b040-cb2cfc23fe32)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/9ceccd1c-b80e-4da9-8752-fadcfa4beb5c)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/a51342fd-c679-4ae3-969c-51d5a6772105)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/02a87e13-b5bd-4ae7-a70b-8b417612d4de)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/f02826c7-7e3a-47b7-80e1-952f26f3c056)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/c9463db9-a959-4175-911f-67d0711e63cc)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/a5ffe4cb-aba0-4917-ae56-7efc972070ac)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/8059551d-db12-4845-9695-b7ef50abe2c7)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/36fbceca-ec3e-4b8c-828f-57e17d2a1826)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/1f38109c-b220-4712-8352-ecfa8e974b79)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/e26a0433-845e-4278-8020-6ccbbd349da8)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/0225618f-2eed-4f8c-ab1b-096a4cd708be)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/ef2190f8-75b5-4a50-96d2-582b14883a3d)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/71a18d96-d8a8-4e19-93e2-321b2a612dac)
+![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/8a7aa96c-b41c-4c3c-9b0b-ed877d790b28)
 
-![image.png](attachment:image.png)
 
-![image.png](attachment:image.png) 
-
-![image.png](attachment:image.png) 
-
-![image.png](attachment:image.png) 
-
-![image.png](attachment:image.png) 
-
-![image.png](attachment:image.png) 
-
-![image.png](attachment:image.png) 
-
-![image-2.png](attachment:image-2.png)
-
-![image.png](attachment:image.png) 
-
-![image.png](attachment:image.png) 
-
-![image.png](attachment:image.png)
-
-![image.png](attachment:image.png)
-
-![image.png](attachment:image.png)
-
-![image.png](attachment:image.png)
-
-![image.png](attachment:image.png)
-
-![image-2.png](attachment:image-2.png)
-
-![image.png](attachment:image.png) 
-
-![image.png](attachment:image.png) 
-
-![image.png](attachment:image.png) 
-
-![image.png](attachment:image.png)
-
-![image.png](attachment:image.png)
-
-![image.png](attachment:image.png)
-
-![image.png](attachment:image.png)
-
-![image.png](attachment:image.png)
 
 ![image.png](attachment:image.png)
 
