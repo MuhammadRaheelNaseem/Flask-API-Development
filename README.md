@@ -901,6 +901,86 @@ if __name__ == '__main__':
 ![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/ef2190f8-75b5-4a50-96d2-582b14883a3d)
 ![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/71a18d96-d8a8-4e19-93e2-321b2a612dac)
 ![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/8a7aa96c-b41c-4c3c-9b0b-ed877d790b28)
+
+# Paste this API script into flasK_app.py and don't forgot to comment app.run() in last line of the script
+```Python
+from flask import Flask, request, jsonify
+import mysql.connector
+
+app = Flask(__name__)
+
+# MySQL configurations
+db = mysql.connector.connect(
+    host='your_mysql_host',
+    user='your_mysql_user',
+    password='your_mysql_password',
+    database='your_mysql_database'
+)
+
+# Create a table in the database if it doesn't exist
+def create_table():
+    cur = db.cursor()
+    cur.execute("CREATE TABLE IF NOT EXISTS temp_emp_3 (ID INT PRIMARY KEY AUTO_INCREMENT, Name VARCHAR(100), Email VARCHAR(100), Address VARCHAR(100))")
+    db.commit()
+    cur.close()
+
+# API route to get all users
+@app.route('/api/users', methods=['GET'])
+def get_users():
+    cur = db.cursor()
+    cur.execute("SELECT * FROM temp_emp_3")
+    users = cur.fetchall()
+    cur.close()
+    user_list = []
+    for user in users:
+        user_dict = {
+            'id': user[0],
+            'name': user[1],
+            'email': user[2],
+            'address': user[3]
+        }
+        user_list.append(user_dict)
+    return jsonify(user_list)
+
+# API route to create a new user
+@app.route('/api/users/add', methods=['POST'])
+def create_user():
+    name = request.json.get('name')
+    email = request.json.get('email')
+    addr = request.json.get('address')
+    cur = db.cursor()
+    cur.execute("INSERT INTO temp_emp_3 (Name, Email, Address) VALUES (%s, %s, %s)", (name, email, addr))
+    db.commit()
+    cur.close()
+    return jsonify({'message': 'User created successfully'})
+
+# API route to update an existing user
+@app.route('/api/users/update/<string:user_id>', methods=['PUT'])
+def update_user(user_id):
+    name = request.json.get('name')
+    email = request.json.get('email')
+    addr = request.json.get('address')
+    cur = db.cursor()
+    cur.execute("UPDATE temp_emp_3 SET Name = %s, Email = %s, Address = %s WHERE ID = %s", (name, email, addr, user_id))
+    db.commit()
+    cur.close()
+    return jsonify({'message': 'User updated successfully'})
+
+# API route to delete a user
+@app.route('/api/users/delete/<int:user_id>', methods=['DELETE'])
+def delete_user(user_id):
+    cur = db.cursor()
+    cur.execute("DELETE FROM temp_emp_3 WHERE ID = %s", (user_id,))
+    db.commit()
+    cur.close()
+    return jsonify({'message': 'User deleted successfully'})
+
+if __name__ == '__main__':
+    create_table()
+    # app.run()
+
+```
+
 ![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/d17cfecf-dc38-450d-bc80-9173e0b3257c)
 ![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/6100d08f-3453-4b16-b268-ba95ed0d7669)
 ![image](https://github.com/MuhammadRaheelNaseem/Flask-API-Development/assets/63813881/8ab0c9cf-e1b3-4ee1-b3e1-ea48fe122efe)
