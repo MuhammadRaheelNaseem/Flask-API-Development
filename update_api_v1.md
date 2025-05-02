@@ -384,3 +384,351 @@ Authorization: Bearer <paste_token_here>
 ```
 
 
+
+
+
+### **Intermediate Level**
+
+---
+
+#### **Program 9: Role-Based Authentication (RBAC)**
+
+* **Objective:** Implement Role-Based Authentication for different types of users (admin, user).
+
+* **Python Code:**
+
+  ```python
+  from flask import Flask, request, jsonify
+  import jwt
+  from functools import wraps
+  from datetime import datetime, timedelta
+
+  app = Flask(__name__)
+  app.config['SECRET_KEY'] = 'super_secret_key'
+
+  def token_required(f):
+      @wraps(f)
+      def decorated(*args, **kwargs):
+          token = request.headers.get('Authorization')
+          if not token:
+              return jsonify({'message': 'Token is missing!'}), 403
+          try:
+              data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=["HS256"])
+          except:
+              return jsonify({'message': 'Token is invalid!'}), 403
+          return f(*args, **kwargs, data=data)
+      return decorated
+
+  @app.route('/admin', methods=['GET'])
+  @token_required
+  def admin(data):
+      if data['role'] != 'admin':
+          return jsonify({'message': 'Admin access required!'}), 403
+      return jsonify({"message": "Welcome, Admin!"}), 200
+
+  @app.route('/user', methods=['GET'])
+  @token_required
+  def user(data):
+      return jsonify({"message": f"Hello, {data['username']}!"}), 200
+
+  @app.route('/login', methods=['POST'])
+  def login():
+      auth = request.get_json()
+      if auth and auth['username'] == 'admin' and auth['password'] == 'adminpass':
+          token = jwt.encode({'username': 'admin', 'role': 'admin', 'exp': datetime.utcnow() + timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
+          return jsonify({'token': token}), 200
+      elif auth and auth['username'] == 'user' and auth['password'] == 'userpass':
+          token = jwt.encode({'username': 'user', 'role': 'user', 'exp': datetime.utcnow() + timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
+          return jsonify({'token': token}), 200
+      return jsonify({'message': 'Unauthorized'}), 401
+
+  if __name__ == '__main__':
+      app.run(debug=True)
+  ```
+
+* **Explanation:**
+
+  * **`token_required` decorator:** This ensures that any protected route verifies the JWT sent in the `Authorization` header.
+  * **Roles (admin/user):** We verify the role in the decoded JWT and enforce access control by checking the role in the `/admin` route.
+  * **Login:** We simulate a login where the credentials are checked. If valid, a JWT is generated containing a `role` claim, which determines access.
+
+* **Testing with Postman:**
+
+  1. **Login as admin/user:**
+
+     * Use **POST** to `/login` with JSON payload:
+
+       ```json
+       {
+         "username": "admin",
+         "password": "adminpass"
+       }
+       ```
+     * You will get a token in the response.
+  2. **Access protected admin route:**
+
+     * In Postman, choose **GET** for `/admin`.
+     * In the **Authorization** tab, choose **Bearer Token**, and paste the token you got from the `/login` route.
+     * You should get a 200 response with "Welcome, Admin!" if the role is valid.
+  3. **Access protected user route:**
+
+     * Similar to the admin route, use a user token and check if access is granted.
+  4. **Test invalid token:**
+
+     * Use a manipulated or expired token and verify the 403 Unauthorized message.
+
+---
+
+#### **Program 10: Proper `SECRET_KEY` Configuration**
+
+* **Objective:** Securely configure Flask’s `SECRET_KEY` for session signing, JWT encoding, and more.
+
+* **Python Code:**
+
+  ```python
+  import os
+  from flask import Flask, jsonify
+  from werkzeug.security import generate_password_hash, check_password_hash
+
+  app = Flask(__name__)
+
+  # Loading SECRET_KEY securely from environment variable (do not hardcode in production)
+  app.config['SECRET_KEY'] = os.environ.get('FLASK_SECRET_KEY', 'default_secret_key')
+
+  @app.route('/secure', methods=['GET'])
+  def secure_route():
+      return jsonify({"message": "This is a secure route!"})
+
+  if __name__ == '__main__':
+      app.run(debug=True)
+  ```
+
+* **Explanation:**
+
+  * **Environment Variable Usage:** We load the `SECRET_KEY` from the environment, which is the secure practice for production apps. If not set, it defaults to `'default_secret_key'`, but for security purposes, always set this in your deployment environment (for example, in `.env` or as an environment variable in your server).
+  * **Security:** Never hardcode the secret key in production. Always use environment variables or a secure vault service to inject it at runtime. You can also use `python-dotenv` to load `.env` variables easily.
+
+* **Setting Environment Variable (Linux/macOS):**
+
+  ```bash
+  export FLASK_SECRET_KEY="your_super_secret_key"
+  ```
+
+* **Testing:**
+
+  1. In your terminal, run the Flask app.
+  2. Make sure the secret is set in the environment and that you can access the `/secure` route.
+  3. This route simply returns a secure message to verify the configuration.
+
+---
+
+#### **Program 11: Implementing Secure JWT Authentication (using Flask-Login)**
+
+* **Objective:** Properly implement JWT authentication for secure routes using Flask-Login for session management.
+
+* **Python Code:**
+
+  ```python
+  from flask import Flask, request, jsonify
+  import jwt
+  from datetime import datetime, timedelta
+  from functools import wraps
+  from flask_login import LoginManager, UserMixin, login_user, login_required, current_user
+
+  app = Flask(__name__)
+  app.config['SECRET_KEY'] = 'your_super_secret_key'
+
+  # Setup Flask-Login
+  login_manager = LoginManager()
+  login_manager.init_app(app)
+
+  class User(UserMixin):
+      def __init__(self, id, username, role):
+          self.id = id
+          self.username = username
+          self.role = role
+
+  users = [
+      User(1, 'admin', 'admin'),
+      User(2, 'user', 'user')
+  ]
+
+  @login_manager.user_loader
+  def load_user(user_id):
+      return users[int(user_id) - 1] if user_id.isdigit() else None
+
+  def token_required(f):
+      @wraps(f)
+      def decorated(*args, **kwargs):
+          token = request.headers.get('Authorization')
+          if not token:
+              return jsonify({'message': 'Token is missing!'}), 403
+          try:
+              data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=["HS256"])
+          except jwt.ExpiredSignatureError:
+              return jsonify({'message': 'Token has expired!'}), 403
+          except:
+              return jsonify({'message': 'Token is invalid!'}), 403
+          return f(*args, **kwargs)
+      return decorated
+
+  @app.route('/login', methods=['POST'])
+  def login():
+      auth = request.get_json()
+      if auth and auth['username'] == 'admin' and auth['password'] == 'adminpass':
+          token = jwt.encode({'username': 'admin', 'role': 'admin', 'exp': datetime.utcnow() + timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
+          return jsonify({'token': token}), 200
+      elif auth and auth['username'] == 'user' and auth['password'] == 'userpass':
+          token = jwt.encode({'username': 'user', 'role': 'user', 'exp': datetime.utcnow() + timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
+          return jsonify({'token': token}), 200
+      return jsonify({'message': 'Unauthorized'}), 401
+
+  @app.route('/secure', methods=['GET'])
+  @token_required
+  def secure():
+      token = request.headers.get('Authorization')
+      try:
+          data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=["HS256"])
+          return jsonify({"message": f"Hello {data['username']}, you have accessed a secure route!"}), 200
+      except jwt.ExpiredSignatureError:
+          return jsonify({'message': 'Token expired'}), 403
+      except:
+          return jsonify({'message': 'Invalid token'}), 403
+
+  if __name__ == '__main__':
+      app.run(debug=True)
+  ```
+
+* **Explanation:**
+
+  * **Flask-Login:** We integrate Flask-Login to manage user sessions. It simplifies user authentication management, tracking users, and accessing the current session.
+  * **JWT Authentication:** The `/login` route generates a JWT token for a valid username and password.
+  * **Secure Route:** The `/secure` route is protected by Flask-Login. The user must be logged in to access this route. We verify the session with `login_required` and display a personalized message using `current_user`.
+
+* **Testing with Postman:**
+
+  1. **Login as admin/user**: Send **POST** request to `http://127.0.0.1:5000/login` with JSON:
+
+     ```json
+     {
+       "username": "admin",
+       "password": "adminpass"
+     }
+     ```
+  2. **Access Secure Route**: Use **GET** to `/secure` with **Authorization** header containing `Bearer <token>` from the login response.
+  3. The response should be `"Hello admin, you have accessed a secure route!"`.
+
+---
+
+### **Advanced Level**
+
+---
+
+#### **Program 12: Admin and User Roles with JWT (Advanced RBAC)**
+
+* **Objective:** Extend role-based authentication for access control.
+
+* **Python Code:**
+
+  ```python
+  from flask import Flask, request, jsonify
+  import jwt
+  from datetime import datetime, timedelta
+  from functools import wraps
+
+  app = Flask(__name__)
+  app.config['SECRET_KEY'] = 'your_super_secret_key'
+
+  def token_required(f):
+      @wraps(f)
+      def decorated(*args, **kwargs):
+          token = request.headers.get('Authorization')
+          if not token:
+              return jsonify({'message': 'Token is missing!'}), 403
+          try:
+              data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=["HS256"])
+          except:
+              return jsonify({'message': 'Token is invalid!'}), 403
+          return f(*args, **kwargs, data=data)
+      return decorated
+
+  @app.route('/admin', methods=['GET'])
+  @token_required
+  def admin(data):
+      if data['role'] != 'admin':
+          return jsonify({'message': 'Admin access required!'}), 403
+      return jsonify({"message": "Welcome, Admin!"}), 200
+
+  @app.route('/user', methods=['GET'])
+  @token_required
+  def user(data):
+      return jsonify({"message": f"Hello, {data['username']}!"}), 200
+
+  @app.route('/login', methods=['POST'])
+  def login():
+      auth = request.get_json()
+      if auth and auth['username'] == 'admin' and auth['password'] == 'adminpass':
+          token = jwt.encode({'username': 'admin', 'role': 'admin', 'exp': datetime.utcnow() + timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
+          return jsonify({'token': token}), 200
+      elif auth and auth['username'] == 'user' and auth['password'] == 'userpass':
+          token = jwt.encode({'username': 'user', 'role': 'user', 'exp': datetime.utcnow() + timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
+          return jsonify({'token': token}), 200
+      return jsonify({'message': 'Unauthorized'}), 401
+
+  if __name__ == '__main__':
+      app.run(debug=True)
+  ```
+
+* **Explanation:**
+
+  * **Roles:** We enforce role-based access control (RBAC) for `/admin` and `/user` routes. Only users with the role `admin` can access `/admin`, and any valid user can access `/user`.
+  * **JWT Token:** We generate JWT tokens for different users based on their role.
+
+* **Testing with Postman:**
+
+  1. **Login and get token**: POST to `/login` with username `admin` or `user`.
+  2. **Access `/admin` route**: Send GET to `/admin` with the **Authorization** header containing the token. Admin access should return "Welcome, Admin!", while non-admin tokens should return 403.
+  3. **Access `/user` route**: Any valid token should give access to the `/user` route.
+
+---
+
+#### **Program 13: Flask Blueprints for Modular API**
+
+* **Objective:** Organize Flask routes into modular sections using **Blueprints**.
+
+* **Python Code:**
+
+  ```python
+  from flask import Flask, Blueprint, jsonify
+
+  app = Flask(__name__)
+
+  # Create a blueprint for user-related routes
+  user_bp = Blueprint('user', __name__, url_prefix='/user')
+
+  @user_bp.route('/')
+  def user_home():
+      return jsonify({"message": "User Home"})
+
+  @user_bp.route('/profile')
+  def user_profile():
+      return jsonify({"message": "User Profile"})
+
+  app.register_blueprint(user_bp)
+
+  if __name__ == '__main__':
+      app.run(debug=True)
+  ```
+
+* **Explanation:**
+
+  * **Blueprints:** We define a `user_bp` Blueprint to group all user-related routes (`/user` and `/user/profile`).
+  * **Register Blueprints:** We register the blueprint with the Flask app using `app.register_blueprint(user_bp)`.
+
+* **Testing with Postman:**
+
+  1. **Access the `/user` route**: Send a **GET** request to `http://127.0.0.1:5000/user`.
+  2. **Access `/user/profile` route**: Send a **GET** request to `http://127.0.0.1:5000/user/profile`.
+
+
+
